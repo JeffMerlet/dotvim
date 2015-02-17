@@ -95,6 +95,9 @@ let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 " Set minimum syntax keyword length.
 let g:neocomplete#sources#syntax#min_keyword_length = 3
+" cancel cursor moving in insert mode
+let g:neocomplete#enable_cursor_hold_i = 0
+let g:neocomplete#enable_insert_char_pre = 0
 " Plugin key-mappings.
 inoremap <expr><C-g>     neocomplete#undo_completion()
 inoremap <expr><C-l>     neocomplete#complete_common_string()
