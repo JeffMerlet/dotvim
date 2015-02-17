@@ -10,7 +10,7 @@ brew install vim --with-lua --override-system-vim
 Then go to your home directory, clone the repo and rename it to `.vim`  
 ```
 cd
-git clone https://github.com/JeffMerlet/dotvim.git
+git clone https://github.com/JeffMerlet/dotvim.git --recursive
 mv dotvim .vim
 ```  
 
