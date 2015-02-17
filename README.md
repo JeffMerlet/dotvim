@@ -14,4 +14,9 @@ git clone https://github.com/JeffMerlet/dotvim.git --recursive
 mv dotvim .vim
 ```  
 
+Do not forget to run the follwoing command to set git to use `vim` instead of the default `vi`:  
+```
+git config --global core.editor vim
+```
+
 

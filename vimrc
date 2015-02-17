@@ -45,11 +45,17 @@ syntax enable
 " Tell vim that your terminal supports 256 colors
 set t_Co=256
 " Use ; instead of : to enter commands, saves a lot of keystrokes in the long run
-nnoremap ; :
+nnoremap ; : 
+" swap files (.swp) in a common location
+" // means use the file's full path
+set dir=~/.vim/_swap//
+" backup files (~) in a common location if possible
+set backup
+set backupdir=~/.vim/_backup/,~/tmp,.
 " Turn persistent undo on 
 " means that you can undo even when you close a buffer/VIM
  try
-     set undodir=~/.vim/undodir
+     set undodir=~/.vim/_undo
          set undofile
          catch
          endtry
@@ -96,7 +102,8 @@ inoremap <expr><C-l>     neocomplete#complete_common_string()
 " <CR>: close popup and save indent.
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
-     return neocomplete#close_popup() . "\<CR>"
+     " return neocomplete#close_popup() . "\<CR>"
+     return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
 endfunction
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
