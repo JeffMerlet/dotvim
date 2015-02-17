@@ -6,7 +6,7 @@ syntax on
 filetype plugin indent on
 set number
 set ruler
-
+ 
 " Sets leader
 " let mapleader = "\"
 " Sets Git commit message not to be wider than 72
@@ -103,7 +103,7 @@ inoremap <expr><C-l>     neocomplete#complete_common_string()
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
      " return neocomplete#close_popup() . "\<CR>"
-     return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
+     return pumvisible() ? neocomplete#close_popup() : "\<CR>"
 endfunction
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
