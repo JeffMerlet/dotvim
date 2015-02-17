@@ -86,6 +86,9 @@ map <C-n> :NERDTreeToggle<CR>
 " 
 " neocomplete
 " 
+" Disable neocomplete for some file type
+autocmd FileType markdown NeoCompleteLock
+" Enable at startup
 let g:neocomplete#enable_at_startup = 1
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
