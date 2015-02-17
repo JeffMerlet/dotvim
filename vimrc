@@ -36,8 +36,6 @@ set incsearch
 set title
 " Use a visual indicator instead of a beep
 set visualbell
-" Sets the paste mode
-"set paste
 " Toggle paste mode with F2
 set pastetoggle=<F2>
 " Enable syntax highlighting
@@ -45,7 +43,7 @@ syntax enable
 " Tell vim that your terminal supports 256 colors
 set t_Co=256
 " Use ; instead of : to enter commands, saves a lot of keystrokes in the long run
-nnoremap ; : 
+nnoremap ; :
 " swap files (.swp) in a common location
 " // means use the file's full path
 set dir=~/.vim/_swap//
@@ -86,8 +84,6 @@ map <C-n> :NERDTreeToggle<CR>
 " 
 " neocomplete
 " 
-" Disable neocomplete for some file type
-autocmd FileType markdown NeoCompleteLock
 " Enable at startup
 let g:neocomplete#enable_at_startup = 1
 " Disable AutoComplPop.
@@ -161,6 +157,17 @@ au FileType go nmap <Leader>ds <Plug>(go-def-split)
 au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
 au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 
+" Markdown and gitcommit file specific settings
+" Disable neocomplete
+autocmd FileType markdown NeoCompleteLock
+autocmd FileType gitcommit NeoCompleteLock
+" Disable Syntaxi for markdown
+au BufRead *.md set ft=
+" Enables spellcheck
+autocmd FileType markdown setlocal spell spelllang=en_us 
+autocmd FileType gitcommit setlocal spell spelllang=en_us 
+" Improves linebreaks to not cut in middle of word
+set wrap linebreak nolist 
 
 
 
