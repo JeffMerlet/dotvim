@@ -162,8 +162,8 @@ au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 autocmd FileType markdown NeoCompleteLock
 autocmd FileType gitcommit NeoCompleteLock
 " Disable numbering
-autocmd FileType markdown set number=0
-autocmd FileType gitcommit set number=0
+autocmd FileType markdown set nonumber
+autocmd FileType gitcommit set nonumber
 " Disable Syntaxi for markdown
 au BufRead *.md set ft=
 " Enables spellcheck
