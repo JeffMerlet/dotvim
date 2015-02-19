@@ -9,11 +9,14 @@ set ruler
  
 " Sets leader
 " let mapleader = "\"
+" sets the 80th column visible
+set cc=80
 " Allows you to have multiple buffers open
 set hidden
 " Automatically indent on new lines
 set autoindent
-" Copy the indentation of the previous line if auto indent doesn't know what to do
+" Copy the indentation of the previous line if auto indent 
+" doesn't know what to do
 set copyindent
 " Fixes the delete key
 fixdel
@@ -40,7 +43,8 @@ set pastetoggle=<F2>
 syntax enable
 " Tell vim that your terminal supports 256 colors
 set t_Co=256
-" Use ; instead of : to enter commands, saves a lot of keystrokes in the long run
+" Use ; instead of : to enter commands
+" saves a lot of keystrokes in the long run
 nnoremap ; :
 " swap files (.swp) in a common location
 " // means use the file's full path
@@ -129,7 +133,8 @@ let g:go_fmt_command = "goimports"
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
-" Show a list of interfaces which is implemented by the type under your cursor with <leader>s
+" Show a list of interfaces which is implemented by the type 
+" under your cursor with <leader>s
 au FileType go nmap <Leader>s <Plug>(go-implements)
 " Show type info for the word under your cursor with <leader>i
 au FileType go nmap <Leader>i <Plug>(go-info)
