@@ -172,7 +172,7 @@ set wrap linebreak nolist
 " Sets Git commit message not to be wider than 72
 autocmd Filetype gitcommit setlocal spell textwidth=72
 " Sets markdown message not to be wider than 80
-autocmd Filetype markdown setlocal spell textwidth=80
+" autocmd Filetype markdown setlocal spell textwidth=80
 
 
 
