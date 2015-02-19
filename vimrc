@@ -9,8 +9,6 @@ set ruler
  
 " Sets leader
 " let mapleader = "\"
-" Sets Git commit message not to be wider than 72
-autocmd Filetype gitcommit setlocal spell textwidth=72
 " Allows you to have multiple buffers open
 set hidden
 " Automatically indent on new lines
@@ -164,13 +162,17 @@ autocmd FileType gitcommit NeoCompleteLock
 " Disable numbering
 autocmd FileType markdown set nonumber
 autocmd FileType gitcommit set nonumber
-" Disable Syntaxi for markdown
+" Disable Syntax for markdown
 au BufRead *.md set ft=
 " Enables spellcheck
 autocmd FileType markdown setlocal spell spelllang=en_us 
 autocmd FileType gitcommit setlocal spell spelllang=en_us 
 " Improves linebreaks to not cut in middle of word
 set wrap linebreak nolist 
+" Sets Git commit message not to be wider than 72
+autocmd Filetype gitcommit setlocal spell textwidth=72
+" Sets markdown message not to be wider than 80
+autocmd Filetype markdown setlocal spell textwidth=80
 
 
 
