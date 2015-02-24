@@ -6,7 +6,7 @@ syntax on
 filetype plugin indent on
 set number
 set ruler
- 
+
 " Sets leader
 " let mapleader = "\"
 " sets the 80th column visible
@@ -48,17 +48,20 @@ set t_Co=256
 nnoremap ; :
 " swap files (.swp) in a common location
 " // means use the file's full path
-set dir=~/.vim/_swap//
+silent execute '!mkdir ./_swap'
+set dir=./_swap//
 " backup files (~) in a common location if possible
 set backup
-set backupdir=~/.vim/_backup/,~/tmp,.
+silent execute '!mkdir ./_backup'
+set backupdir=./_backup/,~/tmp,.
 " Turn persistent undo on 
 " means that you can undo even when you close a buffer/VIM
- try
-     set undodir=~/.vim/_undo
-         set undofile
-         catch
-         endtry
+silent execute '!mkdir ./_undo'
+try
+  set undodir=./_undo
+  set undofile
+  catch
+endtry
 " More undos
 set undolevels=1000
 " Set tabs
@@ -116,6 +119,14 @@ inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplete#close_popup()
 inoremap <expr><C-e>  neocomplete#cancel_popup()
+
+inoremap <expr> <Left> neocomplete#close_popup() . "\<Left>"
+inoremap <expr> <Right> neocomplete#close_popup() . "\<Right>"
+inoremap <expr> <Up> neocomplete#close_popup() . "\<Up>"
+inoremap <expr> <Down> neocomplete#close_popup() . "\<Down>"
+inoremap <expr> <Cr> neocomplete#close_popup() . "\<Cr>"
+inoremap <expr> <Bs> neocomplete#cancel_popup() . "\<Bs>"
+
 " Go related mappings
 au FileType go nmap <Leader>i <Plug>(go-info)
 au FileType go nmap <Leader>gd <Plug>(go-doc)
