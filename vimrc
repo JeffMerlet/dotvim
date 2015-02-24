@@ -48,17 +48,17 @@ set t_Co=256
 nnoremap ; :
 " swap files (.swp) in a common location
 " // means use the file's full path
-silent execute '!mkdir ./_swap'
-set dir=./_swap//
+silent execute '!mkdir ~/.vim/_swap > /dev/null 2>&1'
+set dir=~/.vim/_swap//
 " backup files (~) in a common location if possible
 set backup
-silent execute '!mkdir ./_backup'
-set backupdir=./_backup/,~/tmp,.
+silent execute '!mkdir ~/.vim/_backup > /dev/null 2>&1'
+set backupdir=~/.vim/_backup/,~/tmp,.
 " Turn persistent undo on 
 " means that you can undo even when you close a buffer/VIM
-silent execute '!mkdir ./_undo'
+silent execute '!mkdir ~/.vim/_undo > /dev/null 2>&1'
 try
-  set undodir=./_undo
+  set undodir=~/.vim/_undo
   set undofile
   catch
 endtry
