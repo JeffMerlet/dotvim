@@ -3,6 +3,8 @@
 *.un~
 *._un~
 _undo/
+_swap/
+_backup
 Session.vim
 .netrwhist
 *~
