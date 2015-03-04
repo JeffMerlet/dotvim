@@ -28,6 +28,8 @@ set ignorecase
 " ...unless there's a capital letter in the query
 set smartcase
 " Indent to correct location with tab
+" Maps :buffers to Fn 1
+:nnoremap <F1> :buffers<CR>:buffer<Space>
 set smarttab
 " Highlight search matches
 set hlsearch
