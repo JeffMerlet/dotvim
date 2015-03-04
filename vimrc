@@ -139,7 +139,12 @@ au FileType go nmap gd <Plug>(go-def-tab)
 " vim-go
 "
 " Enable goimports to automatically insert import paths instead of gofmt
-let g:go_fmt_command = "goimports"
+" let g:go_fmt_command = "goimports"
+" for now i prefer to use gofmt to not delete un-used imports
+" to remove unused imports execute GoImports
+let g:go_fmt_command = "gofmt"
+" Formatting when saving
+let g:go_fmt_autosave = 1
 " Syntax highlighting
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
