@@ -11,6 +11,8 @@ set ruler
 " let mapleader = "\"
 " sets the 80th column visible
 set cc=80
+" Allows terminal clipboard
+set clipboard=unnamed
 " Allows you to have multiple buffers open
 set hidden
 " Automatically indent on new lines
