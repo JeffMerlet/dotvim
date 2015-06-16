@@ -6,6 +6,8 @@ syntax on
 filetype plugin indent on
 set number
 set ruler
+" Sets time in status bar
+set rulerformat=%55(%{strftime('%a\ %b\ %e\ %I:%M\ %p')}\ %5l,%-6(%c%V%)\ %P%)
 
 " Sets leader
 " let mapleader = "\"
@@ -89,6 +91,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 map <C-n> :NERDTreeToggle<CR>
+let NERDTreeQuitOnOpen=1
 
 " 
 " neocomplete
