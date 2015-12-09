@@ -6,6 +6,7 @@ This is my .vim repo based on pathogen with the usual vim settings, and the foll
 * vim-airline  
 * neocomplete  
 * vim-go  
+* vim-unimpaired
 
 I have also specific settings for markdown (and gitcommit) files. 
 
