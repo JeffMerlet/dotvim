@@ -204,7 +204,17 @@ set wrap linebreak nolist
 " Sets markdown message not to be wider than 80
 "autocmd Filetype markdown setlocal spell textwidth=80
 
+"
+" dash.vim
+"
+" Leader-d: to manually enter a search string
+map <Leader>d :Dash 
+" Leader-D: to search the word under the cursor
+map <Leader>D <Plug>DashSearch 
+
+"
 " JSON
+"
 " Pretty JSON Formatting
 map <Leader>js :%!python -m json.tool<CR>
 
