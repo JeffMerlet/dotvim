@@ -148,10 +148,10 @@ au FileType go nmap gd <Plug>(go-def-tab)
 " vim-go
 "
 " Enable goimports to automatically insert import paths instead of gofmt
-" let g:go_fmt_command = "goimports"
+let g:go_fmt_command = "goimports"
 " for now i prefer to use gofmt to not delete un-used imports
 " to remove unused imports execute GoImports
-let g:go_fmt_command = "gofmt"
+" let g:go_fmt_command = "gofmt"
 " Formatting when saving
 let g:go_fmt_autosave = 1
 " Syntax highlighting
@@ -180,6 +180,8 @@ au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)
 " rename identifier under the cursor
 au FileType go nmap <Leader>e <Plug>(go-rename)
+" <leader>c => go definition under the cursor
+au FileType go nmap <Leader>de <Plug>(go-def)
 " Open definition/declaration
 au FileType go nmap <Leader>ds <Plug>(go-def-split)
 au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
