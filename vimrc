@@ -23,7 +23,9 @@ set autoindent
 " doesn't know what to do
 set copyindent
 " Fixes the delete key
-fixdel
+if exists(':fixdel')
+  fixdel
+endif
 set backspace=indent,eol,start
 " Highlight matching braces/tags
 set showmatch
