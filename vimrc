@@ -101,42 +101,55 @@ let NERDTreeQuitOnOpen=1
 " neocomplete
 " 
 " Enable at startup
-let g:neocomplete#enable_at_startup = 1
+"let g:neocomplete#enable_at_startup = 1
 " Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
+"let g:acp_enableAtStartup = 0
 " Use neocomplete.
-let g:neocomplete#enable_at_startup = 1
+"let g:neocomplete#enable_at_startup = 1
 " Use smartcase.
-let g:neocomplete#enable_smart_case = 1
+"let g:neocomplete#enable_smart_case = 1
 " Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length = 3
+"let g:neocomplete#sources#syntax#min_keyword_length = 3
 " cancel cursor moving in insert mode
-let g:neocomplete#enable_cursor_hold_i = 0
-let g:neocomplete#enable_insert_char_pre = 0
+"let g:neocomplete#enable_cursor_hold_i = 0
+"let g:neocomplete#enable_insert_char_pre = 0
 " Plugin key-mappings.
-inoremap <expr><C-g>     neocomplete#undo_completion()
-inoremap <expr><C-l>     neocomplete#complete_common_string()
+"inoremap <expr><C-g>     neocomplete#undo_completion()
+"inoremap <expr><C-l>     neocomplete#complete_common_string()
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
+"inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+"function! s:my_cr_function()
      " return neocomplete#close_popup() . "\<CR>"
-     return pumvisible() ? neocomplete#close_popup() : "\<CR>"
-endfunction
+     "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+"endfunction
 " <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+"inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y>  neocomplete#close_popup()
-inoremap <expr><C-e>  neocomplete#cancel_popup()
+"inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+"inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+"inoremap <expr><C-y>  neocomplete#close_popup()
+"inoremap <expr><C-e>  neocomplete#cancel_popup()
 
-inoremap <expr> <Left> neocomplete#close_popup() . "\<Left>"
-inoremap <expr> <Right> neocomplete#close_popup() . "\<Right>"
-inoremap <expr> <Up> neocomplete#close_popup() . "\<Up>"
-inoremap <expr> <Down> neocomplete#close_popup() . "\<Down>"
-inoremap <expr> <Cr> neocomplete#close_popup() . "\<Cr>"
-inoremap <expr> <Bs> neocomplete#cancel_popup() . "\<Bs>"
+"inoremap <expr> <Left> neocomplete#close_popup() . "\<Left>"
+"inoremap <expr> <Right> neocomplete#close_popup() . "\<Right>"
+"inoremap <expr> <Up> neocomplete#close_popup() . "\<Up>"
+"inoremap <expr> <Down> neocomplete#close_popup() . "\<Down>"
+"inoremap <expr> <Cr> neocomplete#close_popup() . "\<Cr>"
+"inoremap <expr> <Bs> neocomplete#cancel_popup() . "\<Bs>"
+
+"
+" SimpleAutoComplPop
+"
+" 1. variables are all defined in current scope, use keyword from current
+" buffer for completion `<C-x><C-n>`
+" 2. When the '.' is pressed, use smarter omnicomplete `<C-x><C-o>`, this
+" works well with the vim-go plugin
+autocmd FileType go call sacp#enableForThisBuffer({ "matches": [
+  \ { '=~': '\v[a-zA-Z]{4}$' , 'feedkeys': "\<C-x>\<C-n>"} ,
+  \ { '=~': '\.$'            , 'feedkeys': "\<C-x>\<C-o>", "ignoreCompletionMode":1} ,
+  \ ]
+  \ })
 
 " Go related mappings
 au FileType go nmap <Leader>i <Plug>(go-info)
